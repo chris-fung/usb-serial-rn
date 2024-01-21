@@ -1,6 +1,6 @@
-import { NativeModules } from 'react-native';
+import { NativeModules, Platform } from 'react-native';
 
-const { RNSerialport } = NativeModules;
+const RNSerialport = Platform.OS === 'android' ? NativeModules.RNSerialport : {};
 
 const definitions = {
   DATA_BITS :{

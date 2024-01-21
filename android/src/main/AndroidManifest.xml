@@ -3,5 +3,5 @@
           package="com.melihyarikkaya.rnserialport">
     <uses-feature android:name="android.hardware.usb.host"
         android:required="true"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 </manifest>
-  
