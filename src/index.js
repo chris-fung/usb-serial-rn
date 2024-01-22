@@ -4,7 +4,7 @@ import { NativeModules, Platform } from 'react-native';
 import Socket from './Socket';
 import Server from './Server';
 
-const RNSerialport = Platform.OS === 'android' ? NativeModules.RNSerialport : {};
+const rnSerialport = Platform.OS === 'android' ? NativeModules.RNSerialport : {};
 
 const definitions = {
   DATA_BITS :{
@@ -56,14 +56,14 @@ const actions = {
   ON_READ_DATA            : 'onReadDataFromPort'
 };
 
-RNSerialport.intArrayToUtf16 = (intArray) => {
+rnSerialport.intArrayToUtf16 = (intArray) => {
   var str = "";
   for (var i = 0; i < intArray.length; i++) {
     str += String.fromCharCode(intArray[i]);
   }
   return str;
 }
-RNSerialport.hexToUtf16 = (hex) => {
+rnSerialport.hexToUtf16 = (hex) => {
   var str = "";
   var radix = 16;
   for (var i = 0; i < hex.length && hex.substr(i, 2) !== "00"; i += 2) {
@@ -90,7 +90,7 @@ createConnection = (options, callback) => {
     return tcpSocket.connect(options, callback);
 }
 
-export default { createServer, createConnection, Server, Socket, RNSerialport, definitions, actions };
+export default { createServer, createConnection, Server, Socket, rnSerialport, definitions, actions };
 
 // @ts-ignore
-module.exports = { createServer, createConnection, Server, Socket, RNSerialport, definitions, actions };
+module.exports = { createServer, createConnection, Server, Socket, rnSerialport, definitions, actions };

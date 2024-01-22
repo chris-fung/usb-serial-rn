@@ -24,7 +24,7 @@ export interface IOnServiceStarted {
   deviceAttached: boolean
 }
 
-export interface DefinitionsStatic {
+interface DefinitionsStatic {
   DATA_BITS: {
     DATA_BITS_5: number
     DATA_BITS_6: number;
