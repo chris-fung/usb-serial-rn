@@ -1,6 +1,6 @@
 {
   "name": "usb-serial-rn",
-  "version": "1.1.3",
+  "version": "1.1.5",
   "description": "High performance JAVA native gateway passthrough between multi usb serial port and multi socket without JS bridge, or just use multi usb serial port or socket alone",
   "main": "src/index.js",
   "scripts": {
