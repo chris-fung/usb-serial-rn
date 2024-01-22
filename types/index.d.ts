@@ -1,3 +1,6 @@
+import Socket, { ConnectionOptions } from '../src/Socket';
+import Server from '../src/Server';
+
 export interface IDevice {
   name: string;
   vendorId: number;
@@ -267,3 +270,5 @@ interface RNSerialportStatic {
   hexToUtf16(hex: string): string
 }
 export var RNSerialport: RNSerialportStatic;
+export function createServer(connectionListener: (socket: Socket) => void): Server;
+export function createConnection(options: ConnectionOptions, callback: () => void): Socket;
