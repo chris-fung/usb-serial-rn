@@ -272,3 +272,5 @@ interface RNSerialportStatic {
 export var RNSerialport: RNSerialportStatic;
 export function createServer(connectionListener: (socket: Socket) => void): Server;
 export function createConnection(options: ConnectionOptions, callback: () => void): Socket;
+export type TcpSocket = Socket;
+export type TcpSocketServer = Server;
