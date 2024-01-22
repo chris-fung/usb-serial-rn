@@ -4,5 +4,4 @@
     <uses-feature android:name="android.hardware.usb.host"
         android:required="true"/>
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-    <application tools:overrideLibrary="com.melihyarikkaya.rnserialport" />
 </manifest>
