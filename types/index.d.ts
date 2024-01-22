@@ -1,6 +1,8 @@
 import Socket, { ConnectionOptions } from '../src/Socket';
 import Server from '../src/Server';
 
+export type TcpSocket = Socket;
+export type TcpSocketServer = Server;
 export interface IDevice {
   name: string;
   vendorId: number;
@@ -22,7 +24,7 @@ export interface IOnServiceStarted {
   deviceAttached: boolean
 }
 
-interface DefinitionsStatic {
+export interface DefinitionsStatic {
   DATA_BITS: {
     DATA_BITS_5: number
     DATA_BITS_6: number;
@@ -60,7 +62,7 @@ interface DefinitionsStatic {
     PL2303: string
   };
 }
-export var definitions: DefinitionsStatic;
+export type Definitions = DefinitionsStatic;
 
 interface ActionsStatic {
   ON_SERVICE_STARTED: string,
@@ -72,7 +74,7 @@ interface ActionsStatic {
   ON_DISCONNECTED: string,
   ON_READ_DATA: string
 }
-export var actions: ActionsStatic;
+export type Actions = ActionsStatic;
 
 type DataBits = 5 | 6 | 7 | 8;
 type StopBits = 1 | 2 | 3;
@@ -269,8 +271,6 @@ interface RNSerialportStatic {
    */
   hexToUtf16(hex: string): string
 }
-export var RNSerialport: RNSerialportStatic;
-export function createServer(connectionListener: (socket: Socket) => void): Server;
-export function createConnection(options: ConnectionOptions, callback: () => void): Socket;
-export type TcpSocket = Socket;
-export type TcpSocketServer = Server;
+export type RNSerialport = RNSerialportStatic;
+export function createServer(connectionListener: (socket: TcpSocket) => void): TcpSocketServer;
+export function createConnection(options: ConnectionOptions, callback: () => void): TcpSocket;
