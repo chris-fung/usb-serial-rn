@@ -3,7 +3,4 @@
           package="com.melihyarikkaya.rnserialport" xmlns:tools="http://schemas.android.com/tools">
     <uses-feature android:name="android.hardware.usb.host" android:required="true"/>
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-    <uses-sdk android:minSdkVersion="30"
-          android:targetSdkVersion="33"
-          android:maxSdkVersion="33" />
 </manifest>
