@@ -90,7 +90,7 @@ createConnection = (options, callback) => {
     return tcpSocket.connect(options, callback);
 }
 
-export default { createServer, createConnection, TcpServer, TcpSocket, RNSerialport, Definitions, Actions };
+export default { createServer, createConnection, RNSerialport, Definitions, Actions };
 
 // @ts-ignore
-module.exports = { createServer, createConnection, TcpServer, TcpSocket, RNSerialport, Definitions, Actions };
+module.exports = { createServer, createConnection, RNSerialport, Definitions, Actions };
