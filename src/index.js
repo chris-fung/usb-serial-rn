@@ -1,12 +1,12 @@
 'use strict';
 
 import { NativeModules, Platform } from 'react-native';
-import Socket from './Socket';
-import Server from './Server';
+import TcpSocket from './Socket';
+import TcpServer from './Server';
 
-const rnSerialport = Platform.OS === 'android' ? NativeModules.RNSerialport : {};
+const RNSerialport = Platform.OS === 'android' ? NativeModules.RNSerialport : {};
 
-const definitions = {
+const Definitions = {
   DATA_BITS :{
     DATA_BITS_5: 5,
     DATA_BITS_6: 6,
@@ -45,7 +45,7 @@ const definitions = {
   }
 };
 
-const actions = {
+const Actions = {
   ON_SERVICE_STARTED      : 'onServiceStarted',
   ON_SERVICE_STOPPED      : 'onServiceStopped',
   ON_DEVICE_ATTACHED      : 'onDeviceAttached',
@@ -56,14 +56,14 @@ const actions = {
   ON_READ_DATA            : 'onReadDataFromPort'
 };
 
-rnSerialport.intArrayToUtf16 = (intArray) => {
+RNSerialport.intArrayToUtf16 = (intArray) => {
   var str = "";
   for (var i = 0; i < intArray.length; i++) {
     str += String.fromCharCode(intArray[i]);
   }
   return str;
 }
-rnSerialport.hexToUtf16 = (hex) => {
+RNSerialport.hexToUtf16 = (hex) => {
   var str = "";
   var radix = 16;
   for (var i = 0; i < hex.length && hex.substr(i, 2) !== "00"; i += 2) {
@@ -73,24 +73,24 @@ rnSerialport.hexToUtf16 = (hex) => {
 }
 
 /**
- * @param {(socket: Socket) => void} connectionListener
- * @returns {Server}
+ * @param {(socket: TcpSocket) => void} connectionListener
+ * @returns {TcpServer}
  */
 createServer = (connectionListener) => {
-    return new Server(connectionListener);
+    return new TcpServer(connectionListener);
 }
 
 /**
  * @param {import('./Socket').ConnectionOptions} options
  * @param {() => void} callback
- * @returns {Socket}
+ * @returns {TcpSocket}
  */
 createConnection = (options, callback) => {
-    const tcpSocket = new Socket();
+    const tcpSocket = new TcpSocket();
     return tcpSocket.connect(options, callback);
 }
 
-export default { createServer, createConnection, Server, Socket, rnSerialport, definitions, actions };
+export default { createServer, createConnection, TcpServer, TcpSocket, RNSerialport, Definitions, Actions };
 
 // @ts-ignore
-module.exports = { createServer, createConnection, Server, Socket, rnSerialport, definitions, actions };
+module.exports = { createServer, createConnection, TcpServer, TcpSocket, RNSerialport, Definitions, Actions };

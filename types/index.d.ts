@@ -2,7 +2,7 @@ import Socket, { ConnectionOptions } from '../src/Socket';
 import Server from '../src/Server';
 
 export type TcpSocket = Socket;
-export type TcpSocketServer = Server;
+export type TcpServer = Server;
 export interface IDevice {
   name: string;
   vendorId: number;
@@ -24,7 +24,7 @@ export interface IOnServiceStarted {
   deviceAttached: boolean
 }
 
-interface DefinitionsStatic {
+export interface Definitions {
   DATA_BITS: {
     DATA_BITS_5: number
     DATA_BITS_6: number;
@@ -62,9 +62,8 @@ interface DefinitionsStatic {
     PL2303: string
   };
 }
-export type Definitions = DefinitionsStatic;
 
-interface ActionsStatic {
+export interface Actions {
   ON_SERVICE_STARTED: string,
   ON_SERVICE_STOPPED: string,
   ON_DEVICE_ATTACHED: string,
@@ -74,7 +73,6 @@ interface ActionsStatic {
   ON_DISCONNECTED: string,
   ON_READ_DATA: string
 }
-export type Actions = ActionsStatic;
 
 type DataBits = 5 | 6 | 7 | 8;
 type StopBits = 1 | 2 | 3;
@@ -83,7 +81,7 @@ type FlowControls = 0 | 1 | 2 | 3;
 type ReturnedDataTypes = 1 | 2;
 type Drivers = "AUTO" | "cdc" | "ch34x" | "cp210x" | "ftdi" | "pl2303";
 
-interface RNSerialportStatic {
+export interface RNSerialport {
   /**
    * Starts the service and Usb listener
    *
@@ -271,6 +269,5 @@ interface RNSerialportStatic {
    */
   hexToUtf16(hex: string): string
 }
-export type RNSerialport = RNSerialportStatic;
-export function createServer(connectionListener: (socket: TcpSocket) => void): TcpSocketServer;
+export function createServer(connectionListener: (socket: TcpSocket) => void): TcpServer;
 export function createConnection(options: ConnectionOptions, callback: () => void): TcpSocket;
