@@ -268,6 +268,18 @@ interface RNSerialportStatic {
    * @memberof RNSerialportStatic
    */
   hexToUtf16(hex: string): string
+
+  writeBytes(deviceName: string, rawData: string): void
+
+  disconnectAllDevices(): void
+
+  setIsNativeGateway(isNativeGateway: boolean): void
+
+  setIsNativeGatewayJsEventEmitOnSerialportData(isNativeGatewayJsEventEmitOnSerialportData: boolean): void
+
+  appBus2DeviceNamePut(busIndex: number, deviceName: string): void
+
+  disconnectDevice(path: string): void
 }
 export var RNSerialport: RNSerialportStatic;
 export function createServer(connectionListener: (socket: Socket) => void): Server;

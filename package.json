@@ -1,6 +1,6 @@
 {
   "name": "usb-serial-rn",
-  "version": "1.1.9",
+  "version": "1.2.0",
   "description": "High performance JAVA native gateway passthrough between multi usb serial port and multi socket without JS bridge, or just use multi usb serial port or socket alone",
   "main": "src/index.js",
   "scripts": {
@@ -14,6 +14,7 @@
   "author": "Chris Feng",
   "license": "MIT",
   "peerDependencies": {
+    "react-native": "0.72.7",
     "buffer": "^6.0.3",
     "eventemitter3": "^5.0.1"
   },
