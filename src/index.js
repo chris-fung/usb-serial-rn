@@ -72,25 +72,14 @@ RNSerialport.hexToUtf16 = (hex) => {
   return str;
 }
 
-/**
- * @param {(socket: TcpSocket) => void} connectionListener
- * @returns {TcpServer}
- */
 createServer = (connectionListener) => {
     return new TcpServer(connectionListener);
 }
 
-/**
- * @param {import('./Socket').ConnectionOptions} options
- * @param {() => void} callback
- * @returns {TcpSocket}
- */
 createConnection = (options, callback) => {
     const tcpSocket = new TcpSocket();
     return tcpSocket.connect(options, callback);
 }
 
 export default { createServer, createConnection, RNSerialport, Definitions, Actions };
-
-// @ts-ignore
-module.exports = { createServer, createConnection, RNSerialport, Definitions, Actions };
+export { createServer, createConnection, RNSerialport, Definitions, Actions };
