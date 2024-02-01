@@ -10,10 +10,15 @@ import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 import com.facebook.react.bridge.JavaScriptModule;
+
 public class RNSerialportPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-      return Arrays.<NativeModule>asList(new RNSerialportModule(reactContext));
+        List<NativeModule> modules = new ArrayList<>();
+        modules.add(new RNSerialportModule(reactContext));
+        modules.add(new XzjhModule(reactContext));
+
+        return modules;
     }
 
     // Deprecated from RN 0.47
