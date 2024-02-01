@@ -269,8 +269,6 @@ interface RNSerialportStatic {
    */
   hexToUtf16(hex: string): string
 
-  writeBytes(deviceName: string, rawData: string): void
-
   disconnectAllDevices(): void
 
   setIsNativeGateway(isNativeGateway: boolean): void

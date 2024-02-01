@@ -39,7 +39,7 @@ dependencies {
     implementation 'com.vdurmont:semver4j:3.1.0'
     implementation 'com.facebook.react:react-native:+'
 
-    implementation fileTree(dir: 'libs', include: ['usbserial-6.1.0-release.aar'])
+    compile fileTree(dir: "libs", include: ["*.jar", "*.aar"])  // "*.aar" is added 
     // if use below `compileOnly files` will cause
     // java.lang.ClassNotFoundException: Didn't find class "com.felhr.usbserial.UsbSerialDevice"
     // so have to use above `implementation fileTree` again

@@ -3,4 +3,12 @@
           package="com.melihyarikkaya.rnserialport" xmlns:tools="http://schemas.android.com/tools">
     <uses-feature android:name="android.hardware.usb.host" android:required="true"/>
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <application android:name=".MainApplication" android:label="@string/app_name">
+    <activity android:name=".MainActivity" android:label="@string/app_name">
+       <intent-filter>
+        <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+    </intent-filter>
+    <meta-data android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" android:resource="@xml/usb_device_filter" />
+    </activity>
+  </application>
 </manifest>
