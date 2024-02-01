@@ -61,6 +61,7 @@ import android.app.XzjhSystemManager
 
 public class XzjhModule extends ReactContextBaseJavaModule {
   public static final String TAG = "XzjhModule";
+
   XzjhSystemManager mMamager = null;
 
   public XzjhModule(ReactApplicationContext reactContext) {
