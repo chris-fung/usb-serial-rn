@@ -1,6 +1,3 @@
-import Socket, { ConnectionOptions } from '../src/Socket';
-import Server from '../src/Server';
-
 export interface IDevice {
   name: string;
   vendorId: number;
@@ -230,26 +227,29 @@ interface RNSerialportStatic {
   /**
    * Writes string to port
    *
-   * @param {string} data
+   * @param {string} deviceName
+   * @param {string} message
    * @memberof RNSerialportStatic
    */
-  writeString(data: string): void;
+  writeString(deviceName: string, message: string): void;
 
   /**
    * Writes Base64 string to port
    *
-   * @param {string} data
+   * @param {string} deviceName
+   * @param {string} message
    * @memberof RNSerialportStatic
    */
-  writeBase64(data: string): void;
+  writeBase64(deviceName: string, message: string): void;
 
   /**
    * Writes hex string to port
    *
-   * @param {string} data
+   * @param {string} deviceName
+   * @param {string} message
    * @memberof RNSerialportStatic
    */
-  writeHexString(data: string): void
+  writeHexString(deviceName: string, message: string): void
 
   /**
    * Integer array convert to Utf16 string
@@ -269,7 +269,7 @@ interface RNSerialportStatic {
    */
   hexToUtf16(hex: string): string
 
-  writeBytes(deviceName: string, rawData: string): void;
+  writeBytes(deviceName: string, message: string): void;
 
   disconnectAllDevices(): void
 
