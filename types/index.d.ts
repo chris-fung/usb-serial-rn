@@ -282,5 +282,3 @@ interface RNSerialportStatic {
   disconnectDevice(path: string): void
 }
 export var RNSerialport: RNSerialportStatic;
-export function createServer(connectionListener: (socket: Socket) => void): Server;
-export function createConnection(options: ConnectionOptions, callback: () => void): Socket;

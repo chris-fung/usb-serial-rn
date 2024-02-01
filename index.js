@@ -1,8 +1,4 @@
-'use strict';
-
 import { NativeModules, Platform } from 'react-native';
-import TcpSocket from './Socket';
-import TcpServer from './Server';
 
 const RNSerialport = Platform.OS === 'android' ? NativeModules.RNSerialport : {};
 
@@ -72,14 +68,5 @@ RNSerialport.hexToUtf16 = (hex) => {
   return str;
 }
 
-createServer = (connectionListener) => {
-    return new TcpServer(connectionListener);
-}
-
-createConnection = (options, callback) => {
-    const tcpSocket = new TcpSocket();
-    return tcpSocket.connect(options, callback);
-}
-
-export default { createServer, createConnection, RNSerialport, Definitions, Actions };
-export { createServer, createConnection, RNSerialport, Definitions, Actions };
+export default { RNSerialport, Definitions, Actions };
+export { RNSerialport, Definitions, Actions };
