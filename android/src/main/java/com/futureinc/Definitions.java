@@ -1,4 +1,4 @@
-package com.futureinc;
+package com.futureinc.usbserial;
 
 /**
  * Created by melih on 12.10.2018.

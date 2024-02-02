@@ -1,4 +1,4 @@
-package com.futureinc;
+package com.futureinc.usbserial;
 
 import android.util.Log;
 

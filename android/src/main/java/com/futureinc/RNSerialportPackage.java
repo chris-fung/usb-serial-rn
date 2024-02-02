@@ -1,5 +1,5 @@
 
-package com.futureinc;
+package com.futureinc.usbserial;
 
 import java.util.Arrays;
 import java.util.ArrayList;
