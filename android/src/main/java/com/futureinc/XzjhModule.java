@@ -57,7 +57,7 @@ import android.hardware.usb.UsbManager;
 import com.felhr.usbserial.UsbSerialDevice;
 import com.felhr.usbserial.UsbSerialInterface;
 
-import android.app.XzjhSystemManager
+import android.app.XzjhSystemManager;
 
 public class XzjhModule extends ReactContextBaseJavaModule {
   public static final String TAG = "XzjhModule";
