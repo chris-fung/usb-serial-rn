@@ -66,7 +66,7 @@ public class XzjhModule extends ReactContextBaseJavaModule {
 
   public XzjhModule(ReactApplicationContext reactContext) {
     super(reactContext);
-    mMamager = (XzjhSystemManager)getSystemService("xzjh_server");
+    mMamager = (XzjhSystemManager)reactContext.getSystemService("xzjh_server");
   }
 
   @Override
