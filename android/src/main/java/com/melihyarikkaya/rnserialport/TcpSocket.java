@@ -1,4 +1,4 @@
-package com.melihyarikkaya.rnserialport;
+package com.futureinc;
 
 public class TcpSocket {
     private final int id;

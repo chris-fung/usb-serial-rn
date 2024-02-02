@@ -1,5 +1,5 @@
 
-package com.melihyarikkaya.rnserialport;
+package com.futureinc;
 
 import java.util.Arrays;
 import java.util.Collections;

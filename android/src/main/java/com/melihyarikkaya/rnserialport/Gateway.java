@@ -1,4 +1,4 @@
-package com.melihyarikkaya.rnserialport;
+package com.futureinc;
 
 import android.util.Log;
 
