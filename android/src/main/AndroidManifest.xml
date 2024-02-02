@@ -3,15 +3,11 @@
           package="com.futureinc.usbserial" xmlns:tools="http://schemas.android.com/tools">
     <uses-feature android:name="android.hardware.usb.host" android:required="true"/>
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-    <application 
-      android:name=".MainApplication" 
-      android:label="@string/app_name" 
-      tools:replace="android:name"
-      >
-      <activity android:name=".MainActivity"
+    <application android:label="@string/app_name">
+      <activity
       android:label="@string/app_name"
       android:screenOrientation="portrait"
-      tools:replace="android:name,android:screenOrientation"
+      tools:replace="android:screenOrientation"
       >
         <intent-filter>
           <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
