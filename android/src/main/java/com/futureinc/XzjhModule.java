@@ -77,6 +77,6 @@ public class XzjhModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void setVerticalScreen() {
       // 调用 jar 中的方法并返回结果
-      mMamager.xzjhSetScreenRotation(1)
+      mMamager.xzjhSetScreenRotation(1);
   }
 }
