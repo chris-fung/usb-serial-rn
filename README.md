@@ -1,5 +1,6 @@
-
 # react-native-serialport
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fchris-fung%2Fusb-serial-rn.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fchris-fung%2Fusb-serial-rn?ref=badge_shield)
+
 
 #### This library is for usb serial port communication on android platform 
 
@@ -33,3 +34,6 @@
 
 ### Java Package Name
  _com.melihyarikkaya.rnserialport_
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fchris-fung%2Fusb-serial-rn.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fchris-fung%2Fusb-serial-rn?ref=badge_large)
